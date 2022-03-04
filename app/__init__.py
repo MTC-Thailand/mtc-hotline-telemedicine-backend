@@ -1,5 +1,6 @@
 import os
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from linebot import LineBotApi
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 from dotenv import load_dotenv
@@ -10,6 +11,7 @@ LINE_CHANNEL_ACCESS_TOKEN = os.environ.get('LINE_CHANNEL_ACCESS_TOKEN')
 
 
 app = Flask(__name__)
+CORS(app)
 
 line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 
