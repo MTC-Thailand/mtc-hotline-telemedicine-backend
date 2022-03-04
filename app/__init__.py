@@ -14,7 +14,7 @@ app = Flask(__name__)
 line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 
 
-@app.route('/book-confirm')
+@app.route('/book-confirm', methods=['POST'])
 def send_booking_confirmation():
     payload = request.json
     if payload['lineId']:
